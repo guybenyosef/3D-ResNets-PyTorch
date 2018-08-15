@@ -5,7 +5,7 @@ import time
 import os
 import sys
 import json
-
+#import pdb
 from utils import AverageMeter
 
 
@@ -16,6 +16,7 @@ def calculate_video_results(output_buffer, video_id, test_results, class_names):
 
     video_results = []
     for i in range(sorted_scores.size(0)):
+        #pdb.set_trace()
         video_results.append({
             'label': class_names[locs[i]],
             'score': sorted_scores[i]

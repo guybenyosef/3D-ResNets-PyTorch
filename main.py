@@ -21,6 +21,7 @@ from utils import Logger
 from train import train_epoch
 from validation import val_epoch
 import test
+#import pdb
 
 if __name__ == '__main__':
     opt = parse_opts()
@@ -73,8 +74,9 @@ if __name__ == '__main__':
         ])
         temporal_transform = TemporalRandomCrop(opt.sample_duration)
         target_transform = ClassLabel()
-        training_data = get_training_set(opt, spatial_transform,
-                                         temporal_transform, target_transform)
+        #pdb.set_trace()
+        # TODO NOTE: TRAINING IS EMPTY
+        training_data = get_training_set(opt, spatial_transform,temporal_transform, target_transform)
         train_loader = torch.utils.data.DataLoader(
             training_data,
             batch_size=opt.batch_size,
